@@ -871,7 +871,7 @@ section,
 
 @media (max-width: 768px) {
   .hero .hero-content .content h1 {
-    font-size: 2.5rem;
+    font-size: 2.0rem;
   }
 }
 
@@ -943,7 +943,7 @@ section,
   border-radius: 12px;
   box-shadow: 0 20px 60px color-mix(in srgb, var(--default-color), transparent 85%);
   width: 100%;
-  height: 400px;
+  height: fit-content;
 }
 
 .hero .hero-content .hero-image .floating-card {
@@ -962,6 +962,13 @@ section,
     left: 20px;
     bottom: 20px;
     padding: 1.5rem;
+  }
+
+  .hero .hero-content .content .cta-group {
+    display: block;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
   }
 }
 
