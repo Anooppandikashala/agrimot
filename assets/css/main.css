@@ -1863,49 +1863,80 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Clients Section
---------------------------------------------------------------*/
-.clients .client-item {
-  padding: 1.5rem;
-  text-align: center;
-  height: 100%;
-  background-color: var(--surface-color);
-  border-radius: 8px;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  transition: all 0.3s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    # Clients Section
+    --------------------------------------------------------------*/
+    .clients {
+      padding: 60px 0;
+    }
 
-.clients .client-item img {
-  max-width: 100%;
-  transition: all 0.3s ease-in-out;
-  filter: grayscale(100);
-  opacity: 0.8;
-}
+    .clients .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
 
-.clients .client-item:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent-color);
-}
+    /* Swiper container */
+    .clients .swiper {
+      width: 100%;
+      padding: 20px 0;
+    }
 
-.clients .client-item:hover img {
-  filter: grayscale(0);
-  opacity: 1;
-}
+    /* Original client item styling */
+    .clients .client-item {
+      padding: 1.5rem;
+      text-align: center;
+      height: 100%;
+      background-color: var(--surface-color);
+      border-radius: 8px;
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-@media (max-width: 1199px) {
-  .clients .client-item {
-    padding: 1.25rem;
-  }
-}
+    .clients .client-item img {
+      max-width: 100%;
+      /* max-height: 80px; */
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      transition: all 0.3s ease-in-out;
+      filter: grayscale(100);
+      opacity: 0.8;
+    }
 
-@media (max-width: 767px) {
-  .clients .client-item {
-    padding: 1rem;
-  }
-}
+    .clients .client-item:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-color);
+    }
+
+    .clients .client-item:hover img {
+      filter: grayscale(0);
+      opacity: 1;
+    }
+
+    @media (max-width: 1199px) {
+      .clients .client-item {
+        padding: 1.25rem;
+        height: 100px;
+      }
+
+      .clients .client-item img {
+        max-height: 70px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .clients .client-item {
+        padding: 1rem;
+        height: 90px;
+      }
+
+      .clients .client-item img {
+        max-height: 60px;
+      }
+    }
 
 /*--------------------------------------------------------------
 # Services Section

@@ -133,24 +133,37 @@
     });
   });
 
-  /**
-   * Init swiper sliders
-   */
-  function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
-
-      if (swiperElement.classList.contains("swiper-tab")) {
-        initSwiperWithCustomPagination(swiperElement, config);
-      } else {
-        new Swiper(swiperElement, config);
-      }
+  const swiper = new Swiper('.clientsSwiper', {
+      slidesPerView: 5,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      // speed: 3000,
+      // loopAdditionalSlides: 2,
+      breakpoints: {
+        576: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        992: {
+          slidesPerView:4,
+          spaceBetween: 30,
+        },
+        1200: {
+          slidesPerView: 5,
+          spaceBetween: 30,
+        },
+      },
+      // freeMode: true,
+      // freeModeMomentum: false,
     });
-  }
-
-  window.addEventListener("load", initSwiper);
 
   /**
    * Init isotope layout and filters
