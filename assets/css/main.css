@@ -5123,3 +5123,19 @@ section,
       border-left-color: transparent;
       border-right-color: #2c3e50;
     }
+
+
+    /* Optional custom enhancements */
+    .search-bar input:focus {
+      box-shadow: 0 0 10px rgba(0, 150, 255, 0.2);
+      transform: scale(1.02);
+    }
+
+    .search-bar input::placeholder {
+      color: #999;
+      transition: color 0.3s ease;
+    }
+
+    .search-bar input:focus::placeholder {
+      color: #bbb;
+    }
