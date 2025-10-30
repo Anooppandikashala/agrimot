@@ -134,7 +134,7 @@
   });
 
   const swiper = new Swiper('.clientsSwiper', {
-      slidesPerView: 5,
+      slidesPerView: 1,
       spaceBetween: 30,
       loop: true,
       autoplay: {
@@ -142,9 +142,13 @@
         disableOnInteraction: false,
       },
       // speed: 3000,
-      // loopAdditionalSlides: 2,
+      //loopAdditionalSlides: 2,
       breakpoints: {
-        576: {
+        400: {
+          slidesPerView: 1,
+          spaceBetween: 30,
+        },
+        500: {
           slidesPerView: 2,
           spaceBetween: 30,
         },
@@ -161,8 +165,8 @@
           spaceBetween: 30,
         },
       },
-      // freeMode: true,
-      // freeModeMomentum: false,
+      freeMode: true,
+      freeModeMomentum: false,
     });
 
   /**

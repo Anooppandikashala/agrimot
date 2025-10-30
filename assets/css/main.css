@@ -1929,12 +1929,26 @@ section,
 
     @media (max-width: 767px) {
       .clients .client-item {
-        padding: 1rem;
-        height: 90px;
+        /* padding: 1rem; */
+        height: max-content;
       }
 
       .clients .client-item img {
-        max-height: 60px;
+        max-height: 150px;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .clients .client-item {
+        /* padding: 1rem; */
+        height: max-content;
+        margin: 50px;
+      }
+
+      .clients .client-item img {
+        max-height: 150px;
+        width: 100%;
       }
     }
 
