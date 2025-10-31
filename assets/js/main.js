@@ -170,31 +170,31 @@
    * Pricing Toggle
    */
 
-  const pricingContainers = document.querySelectorAll('.pricing-toggle-container');
+  // const pricingContainers = document.querySelectorAll('.pricing-toggle-container');
 
-  pricingContainers.forEach(function(container) {
-    const pricingSwitch = container.querySelector('.pricing-toggle input[type="checkbox"]');
-    const monthlyText = container.querySelector('.monthly');
-    const yearlyText = container.querySelector('.yearly');
+  // pricingContainers.forEach(function(container) {
+  //   const pricingSwitch = container.querySelector('.pricing-toggle input[type="checkbox"]');
+  //   const monthlyText = container.querySelector('.monthly');
+  //   const yearlyText = container.querySelector('.yearly');
 
-    pricingSwitch.addEventListener('change', function() {
-      const pricingItems = container.querySelectorAll('.pricing-item');
+  //   pricingSwitch.addEventListener('change', function() {
+  //     const pricingItems = container.querySelectorAll('.pricing-item');
 
-      if (this.checked) {
-        monthlyText.classList.remove('active');
-        yearlyText.classList.add('active');
-        pricingItems.forEach(item => {
-          item.classList.add('yearly-active');
-        });
-      } else {
-        monthlyText.classList.add('active');
-        yearlyText.classList.remove('active');
-        pricingItems.forEach(item => {
-          item.classList.remove('yearly-active');
-        });
-      }
-    });
-  });
+  //     if (this.checked) {
+  //       monthlyText.classList.remove('active');
+  //       yearlyText.classList.add('active');
+  //       pricingItems.forEach(item => {
+  //         item.classList.add('yearly-active');
+  //       });
+  //     } else {
+  //       monthlyText.classList.add('active');
+  //       yearlyText.classList.remove('active');
+  //       pricingItems.forEach(item => {
+  //         item.classList.remove('yearly-active');
+  //       });
+  //     }
+  //   });
+  // });
 
   /**
    * Frequently Asked Questions Toggle
@@ -356,54 +356,22 @@
     // { image: "assets/img/clients/cl3.png", alt: "Client 3" },
   ];
 
-  const clientsWrapper = document.getElementById("clientsWrapper");
+  const clientList = document.getElementById("clientList");
 
-  clients.forEach(client => {
-    const slide = document.createElement("div");
-    slide.className = "swiper-slide";
-    slide.innerHTML = `
-      <div class="client-item">
-        <img src="${client.image}" alt="${client.alt}" loading="lazy">
+  function renderClients(filter = "") {
+    // const filteredClients = clients.filter(c =>
+    //   c.name.toLowerCase().includes(filter.toLowerCase())
+    // );
+
+    clientList.innerHTML = clients.map((c, index) => `
+      <div class="col-xl-2 col-lg-3 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="${100 + index * 50}">
+        <div class="client-item">
+          <img src="${c.image}" class="img-fluid" alt="${c.alt}">
+        </div>
       </div>
-    `;
-    clientsWrapper.appendChild(slide);
-  });
-
-  const swiper = new Swiper('.clientsSwiper', {
-      slidesPerView: 2,
-      spaceBetween: 30,
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      // speed: 3000,
-      //loopAdditionalSlides: 2,
-      breakpoints: {
-        400: {
-          slidesPerView: 1,
-          spaceBetween: 30,
-        },
-        500: {
-          slidesPerView: 2,
-          spaceBetween: 30,
-        },
-        768: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        },
-        992: {
-          slidesPerView:4,
-          spaceBetween: 30,
-        },
-        1200: {
-          slidesPerView: 5,
-          spaceBetween: 30,
-        },
-      },
-      //freeMode: true,
-      //freeModeMomentum: false,
-    });
+    `).join("");
+  }
+  renderClients();
 
   const services = [
       {
