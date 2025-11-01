@@ -137,7 +137,7 @@
    * Init isotope layout and filters
    */
   document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
-    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
+    let layout = isotopeItem.getAttribute('data-layout') ?? 'vertical';
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 
@@ -279,42 +279,42 @@
   const products = [
     // MCB / MCCB (filter-mccb)
     { image: "assets/img/portfolio/product1.png", title: "MCB With K Curve", filter: "filter-mccb" },
-    { image: "assets/img/portfolio/product6.png", title: "MCCB - DY125U", filter: "filter-mccb" },
-    { image: "assets/img/portfolio/product22.png", title: "RCCB & RCBO", filter: "filter-mccb" },
+    // { image: "assets/img/portfolio/product6.png", title: "MCCB - DY125U", filter: "filter-mccb" },
+    // { image: "assets/img/portfolio/product22.png", title: "RCCB & RCBO", filter: "filter-mccb" },
 
     // ACB (filter-branding)
     { image: "assets/img/portfolio/product24.png", title: "ENERSYS", filter: "filter-branding" },
-    { image: "assets/img/portfolio/product17.png", title: "S-Line BUSBAR", filter: "filter-branding" },
-    { image: "assets/img/portfolio/product18.png", title: "LTXL CAPACITOR", filter: "filter-branding" },
+    // { image: "assets/img/portfolio/product17.png", title: "S-Line BUSBAR", filter: "filter-branding" },
+    // { image: "assets/img/portfolio/product18.png", title: "LTXL CAPACITOR", filter: "filter-branding" },
 
     // FN Switch (filter-switches)
     { image: "assets/img/portfolio/product25.png", title: "Breaker Control Switches", filter: "filter-switches" },
 
     // Changeover / Starters / Controllers (filter-changeover)
     { image: "assets/img/portfolio/product2.png", title: "MK.i.DOL STARTER", filter: "filter-changeover" },
-    { image: "assets/img/portfolio/product7.png", title: "MD STARTER+", filter: "filter-changeover" },
-    { image: "assets/img/portfolio/product8.png", title: "MU-GS SMART CONTROLLER", filter: "filter-changeover" },
-    { image: "assets/img/portfolio/product10.png", title: "Single Phase ACCL", filter: "filter-changeover" },
-    { image: "assets/img/portfolio/product13.png", title: "iMMR Motor Relay", filter: "filter-changeover" },
-    { image: "assets/img/portfolio/product14.png", title: "SMART CONTROLLER", filter: "filter-changeover" },
-    { image: "assets/img/portfolio/product15.png", title: "Single Phase Controller", filter: "filter-changeover" },
-    { image: "assets/img/portfolio/product21.png", title: "Three Phase ACCL", filter: "filter-changeover" },
-    { image: "assets/img/portfolio/product11.png", title: "Water Controller WLC SzLC", filter: "filter-changeover" },
-    { image: "assets/img/portfolio/product9.png", title: "Px300 Solar Drive Controller", filter: "filter-changeover" },
-    { image: "assets/img/portfolio/product4.png", title: "M-POWER++", filter: "filter-changeover" },
-    { image: "assets/img/portfolio/product5.png", title: "M-POWER Pro", filter: "filter-changeover" },
-    { image: "assets/img/portfolio/product27.png", title: "Voltage Monitoring Relay", filter: "filter-changeover" },
-    { image: "assets/img/portfolio/product26.png", title: "Earth Leakage Relay", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product7.png", title: "MD STARTER+", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product8.png", title: "MU-GS SMART CONTROLLER", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product10.png", title: "Single Phase ACCL", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product13.png", title: "iMMR Motor Relay", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product14.png", title: "SMART CONTROLLER", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product15.png", title: "Single Phase Controller", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product21.png", title: "Three Phase ACCL", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product11.png", title: "Water Controller WLC SzLC", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product9.png", title: "Px300 Solar Drive Controller", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product4.png", title: "M-POWER++", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product5.png", title: "M-POWER Pro", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product27.png", title: "Voltage Monitoring Relay", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product26.png", title: "Earth Leakage Relay", filter: "filter-changeover" },
 
     // Power Contactors (filter-contactors)
     { image: "assets/img/portfolio/product3.png", title: "MK1 & MK2 Contactors", filter: "filter-contactors" },
-    { image: "assets/img/portfolio/product12.png", title: "Motor Protection Relays", filter: "filter-contactors" },
-    { image: "assets/img/portfolio/product20.png", title: "numrAL Relays", filter: "filter-contactors" },
+    // { image: "assets/img/portfolio/product12.png", title: "Motor Protection Relays", filter: "filter-contactors" },
+    // { image: "assets/img/portfolio/product20.png", title: "numrAL Relays", filter: "filter-contactors" },
 
     // Indicators (filter-indicators)
     { image: "assets/img/portfolio/product16.png", title: "Industrial Signalling Products", filter: "filter-indicators" },
-    { image: "assets/img/portfolio/product28.png", title: "Metal Push Buttons", filter: "filter-indicators" },
-    { image: "assets/img/portfolio/product19.png", title: "Monitors", filter: "filter-indicators" },
+    // { image: "assets/img/portfolio/product28.png", title: "Metal Push Buttons", filter: "filter-indicators" },
+    // { image: "assets/img/portfolio/product19.png", title: "Monitors", filter: "filter-indicators" },
   ];
 
 
@@ -322,7 +322,7 @@
 
   products.forEach((product, index) => {
     const itemHTML = `
-      <div class="col-lg-4 col-md-6 portfolio-item isotope-item ${product.filter}">
+      <div class="col-lg-8 col-md-8 portfolio-item isotope-item ${product.filter}">
         <div class="portfolio-card">
           <div class="image-container">
             <img src="${product.image}" class="img-fluid" alt="${product.title}" loading="lazy">

@@ -2486,7 +2486,7 @@ section,
 .portfolio .image-container {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 4/3;
+  aspect-ratio: 16/9;
   border-radius: 8px;
 }
 
@@ -2575,6 +2575,31 @@ section,
     grid-template-columns: repeat(4, 1fr);
     gap: 50px;
   }
+}
+
+/* Ensure the isotope container is centered */
+#portfolio-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centers all portfolio items */
+  gap: 1.5rem; /* optional: adds spacing between cards */
+}
+
+/* Override Isotope's absolute positioning */
+#portfolio-container .isotope-item {
+  position: static !important;
+}
+
+/* Make sure each card behaves like a flex item */
+#portfolio-container .portfolio-item {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+/* Optional: make images centered inside their containers */
+#portfolio-container .portfolio-item img {
+  display: block;
+  margin: 0 auto;
 }
 
 /*--------------------------------------------------------------
