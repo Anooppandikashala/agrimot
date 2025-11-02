@@ -382,7 +382,7 @@
     clientList.innerHTML = clients.map((c, index) => `
       <div class="col-xl-2 col-lg-3 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="${100 + index * 50}">
         <div class="client-item">
-          <img src="${c.image}" class="img-fluid" alt="${c.alt}">
+          <img src="${c.image}" class="img-fluid" alt="${c.alt}" loading="lazy">
         </div>
       </div>
     `).join("");
@@ -434,7 +434,7 @@
         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
           <div class="service-item">
             <div class="service-image">
-              <img src="${s.image}" alt="${s.title}" class="img-fluid" 
+              <img src="${s.image}" alt="${s.title}" class="img-fluid" loading="lazy"
                 style="width: 100%; height: 200px; object-fit: contain; border-radius: 8px 8px 0 0;">
             </div>
             <div class="service-content" style="padding: 20px;">
