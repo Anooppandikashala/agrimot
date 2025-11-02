@@ -244,15 +244,15 @@
 
   
   const products = [
-    // MCB / MCCB (filter-mccb)
-    { image: "assets/img/portfolio/product1.png", title: "MCB With K Curve", filter: "filter-mccb" },
-    // { image: "assets/img/portfolio/product6.png", title: "MCCB - DY125U", filter: "filter-mccb" },
-    // { image: "assets/img/portfolio/product22.png", title: "RCCB & RCBO", filter: "filter-mccb" },
-
     // ACB (filter-branding)
     { image: "assets/img/portfolio/product24.png", title: "ENERSYS", filter: "filter-branding" },
     // { image: "assets/img/portfolio/product17.png", title: "S-Line BUSBAR", filter: "filter-branding" },
     // { image: "assets/img/portfolio/product18.png", title: "LTXL CAPACITOR", filter: "filter-branding" },
+
+    // MCB / MCCB (filter-mccb)
+    { image: "assets/img/portfolio/product1.png", title: "MCB With K Curve", filter: "filter-mccb" },
+    // { image: "assets/img/portfolio/product6.png", title: "MCCB - DY125U", filter: "filter-mccb" },
+    // { image: "assets/img/portfolio/product22.png", title: "RCCB & RCBO", filter: "filter-mccb" },
 
     // FN Switch (filter-switches)
     { image: "assets/img/portfolio/product25.png", title: "Breaker Control Switches", filter: "filter-switches" },
@@ -345,7 +345,8 @@
     });
 
     isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
+      filters.addEventListener('click', function() 
+      {
         isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
         this.classList.add('filter-active');
         initIsotope.arrange({
