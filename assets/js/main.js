@@ -56,12 +56,12 @@
   /**
    * Preloader
    */
-  const preloader = document.querySelector('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove();
-    });
-  }
+  // const preloader = document.querySelector('#preloader');
+  // if (preloader) {
+  //   window.addEventListener('load', () => {
+  //     preloader.remove();
+  //   });
+  // }
 
   /**
    * Scroll top button
@@ -115,7 +115,6 @@
    * Initiate Pure Counter
    */
   new PureCounter();
-
   /**
    * Animate the skills items on reveal
    */
@@ -131,39 +130,6 @@
         });
       }
     });
-  });
-
-  /**
-   * Init isotope layout and filters
-   */
-  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
-    let layout = isotopeItem.getAttribute('data-layout') ?? 'vertical';
-    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
-    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
-
-    let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
-        itemSelector: '.isotope-item',
-        layoutMode: layout,
-        filter: filter,
-        sortBy: sort
-      });
-    });
-
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
-        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
-        this.classList.add('filter-active');
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        if (typeof aosInit === 'function') {
-          aosInit();
-        }
-      }, false);
-    });
-
   });
 
   /*
@@ -245,37 +211,38 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
-  document.addEventListener('DOMContentLoaded', function() {
-    AOS.init({
-      duration: 800,
-      easing: 'ease-in-out',
-      once: true, // Animation happens only once
-      mirror: false,
-      anchorPlacement: 'top-bottom',
-      offset: 100,
-      disable: false // Enable on all devices
-    });
+  // document.addEventListener('DOMContentLoaded', function() {
+  //   AOS.init({
+  //     duration: 800,
+  //     easing: 'ease-in-out',
+  //     once: true, // Animation happens only once
+  //     mirror: false,
+  //     anchorPlacement: 'top-bottom',
+  //     offset: 100,
+  //     disable: false // Enable on all devices
+  //   });
 
-    // Fallback: If AOS doesn't initialize within 2 seconds, show all content
-    setTimeout(function() {
-      if (!document.documentElement.classList.contains('aos-ready')) {
-        document.querySelectorAll('[data-aos]').forEach(function(el) {
-          el.style.opacity = '1';
-          el.style.visibility = 'visible';
-        });
-      }
-    }, 2000);
+  //   // Fallback: If AOS doesn't initialize within 2 seconds, show all content
+  //   setTimeout(function() {
+  //     if (!document.documentElement.classList.contains('aos-ready')) {
+  //       document.querySelectorAll('[data-aos]').forEach(function(el) {
+  //         el.style.opacity = '1';
+  //         el.style.visibility = 'visible';
+  //       });
+  //     }
+  //   }, 2000);
 
-    // Refresh AOS on window resize
-    let resizeTimer;
-    window.addEventListener('resize', function() {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function() {
-        AOS.refresh();
-      }, 250);
-    });
-  });
+  //   // Refresh AOS on window resize
+  //   let resizeTimer;
+  //   window.addEventListener('resize', function() {
+  //     clearTimeout(resizeTimer);
+  //     resizeTimer = setTimeout(function() {
+  //       AOS.refresh();
+  //     }, 250);
+  //   });
+  // });
 
+  
   const products = [
     // MCB / MCCB (filter-mccb)
     { image: "assets/img/portfolio/product1.png", title: "MCB With K Curve", filter: "filter-mccb" },
@@ -325,7 +292,7 @@
       <div class="col-lg-8 col-md-8 portfolio-item isotope-item ${product.filter}">
         <div class="portfolio-card">
           <div class="image-container">
-            <img src="${product.image}" class="img-fluid" alt="${product.title}" loading="lazy">
+            <img src="${product.image}" class="img-fluid" alt="${product.title}" loading="lazy" >
             <div class="overlay">
               <div class="overlay-content">
                 <a href="${product.image}" class="glightbox zoom-link" title="${product.title}">
@@ -342,6 +309,54 @@
     `;
 
     container.insertAdjacentHTML("beforeend", itemHTML);
+  });
+
+
+  /**
+   * Init isotope layout and filters
+   */
+  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
+    let layout = isotopeItem.getAttribute('data-layout') ?? 'vertical';
+    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
+    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
+
+    let initIsotope;
+    // imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
+    //   initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
+    //     itemSelector: '.isotope-item',
+    //     layoutMode: layout,
+    //     filter: filter,
+    //     sortBy: sort
+    //   });
+    // });
+
+    const container = isotopeItem.querySelector('.isotope-container');
+    initIsotope = new Isotope(container, {
+      itemSelector: '.isotope-item',
+      layoutMode: layout,
+      filter: filter,
+      sortBy: sort,
+      transitionDuration: '0.6s'
+    });
+
+    // Re-layout after images load
+    imagesLoaded(container, function() {
+      initIsotope.layout();
+    });
+
+    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
+      filters.addEventListener('click', function() {
+        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
+        this.classList.add('filter-active');
+        initIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+        if (typeof aosInit === 'function') {
+          aosInit();
+        }
+      }, false);
+    });
+
   });
 
   const clients = [
@@ -418,7 +433,7 @@
         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
           <div class="service-item">
             <div class="service-image">
-              <img src="${s.image}" alt="${s.title}" class="img-fluid"
+              <img src="${s.image}" alt="${s.title}" class="img-fluid" 
                 style="width: 100%; height: 200px; object-fit: contain; border-radius: 8px 8px 0 0;">
             </div>
             <div class="service-content" style="padding: 20px;">
@@ -439,15 +454,38 @@
 
     renderServices();
 
-  window.addEventListener("load", () => {
-    // Initialize Isotope again
-    const iso = new Isotope('.isotope-container', {
-      itemSelector: '.isotope-item',
-      layoutMode: 'fitRows'
-    });
 
-    // Initialize Glightbox
-    const lightbox = GLightbox({ selector: '.glightbox' });
+  document.addEventListener('DOMContentLoaded', function() {
+    // Remove preloader immediately after DOM is ready
+    const preloader = document.querySelector('#preloader');
+    if (preloader) {
+      preloader.remove();
+    }
+    
+    // Defer heavy animations
+    setTimeout(() => {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false,
+        anchorPlacement: 'top-bottom',
+        offset: 100,
+        disable: false
+      });
+    }, 100);
   });
+
+
+  // window.addEventListener("load", () => {
+  //   // Initialize Isotope again
+  //   const iso = new Isotope('.isotope-container', {
+  //     itemSelector: '.isotope-item',
+  //     layoutMode: 'fitRows'
+  //   });
+
+  //   // Initialize Glightbox
+  //   const lightbox = GLightbox({ selector: '.glightbox' });
+  // });
 
 })();
