@@ -1249,18 +1249,17 @@ section,
 .about .content .lead {
   font-size: 1.25rem;
   line-height: 1.7;
-  margin-bottom: 40px;
   color: color-mix(in srgb, var(--default-color), transparent 10%);
 }
 
 .about .content .description {
-  margin-bottom: 60px;
+  margin-bottom: 80px;
+  display: block;
 }
 
 .about .content .description p {
   font-size: 1rem;
   line-height: 1.8;
-  margin-bottom: 20px;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
 
@@ -1274,10 +1273,18 @@ section,
   margin-bottom: 60px;
 }
 
+.about .content a{
+  display: none;
+}
+
 @media (max-width: 768px) {
   .about .content .stats-row {
     gap: 40px;
     flex-wrap: wrap;
+  }
+  .about .content .description {
+    display: block;
+    margin-bottom: 20px !important;
   }
 }
 
@@ -1285,6 +1292,15 @@ section,
   .about .content .stats-row {
     justify-content: space-between;
     gap: 20px;
+  }
+
+  .about .content .description {
+    display: none ;
+  }
+
+  .about .content a{
+    display: block ;
+    margin-bottom: 40px !important;
   }
 }
 

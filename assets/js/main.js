@@ -450,11 +450,11 @@
       `).join("");
 
       document.querySelectorAll('.read-more').forEach(button => {
-        button.addEventListener('click', function(e) {
+        button.addEventListener('click', function (e) {
           e.preventDefault();
           const target = document.querySelector(this.dataset.target);
           if (target) {
-            if (target.style.display === 'none') {
+            if (target.style.display === 'none' || target.style.display === '') {
               target.style.display = 'block';
               this.textContent = 'Show Less';
             } else {
@@ -463,6 +463,23 @@
             }
           }
         });
+      });
+
+      // Reset inline display when resizing window
+      window.addEventListener('resize', () => {
+        const width = window.innerWidth;
+        const description = document.querySelector('#about-description');
+        const readMore = document.querySelector('#about-description-a');
+
+        if (width > 576) {
+          // Desktop view — ensure it's visible and JS style is cleared
+          description.style.display = '';
+          readMore.style.display = 'none';
+        } else {
+          // Mobile view — follow CSS behavior
+          readMore.style.display = 'block';
+          // Don't reset description visibility if user toggled it manually
+        }
       });
     }
 
