@@ -430,7 +430,7 @@
       //   s.title.toLowerCase().includes(filter.toLowerCase())
       // );
 
-      serviceList.innerHTML = services.map(s => `
+      serviceList.innerHTML = services.map((s, index) => `
         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
           <div class="service-item">
             <div class="service-image">
@@ -440,13 +440,30 @@
             <div class="service-content" style="padding: 20px;">
               <h3>${s.title}</h3>
               <p>${s.description}</p>
-              <ul class="feature-list list-unstyled mb-4">
+              <ul id="service-features-${index}" class="feature-list list-unstyled mb-4" style="display: none;">
                 ${s.features.map(f => `<li><i class="bi bi-check-circle"></i> ${f}</li>`).join("")}
               </ul>
+              <a href="#" class="read-more" data-target="#service-features-${index}">Read More</a>
             </div>
           </div>
         </div>
       `).join("");
+
+      document.querySelectorAll('.read-more').forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.dataset.target);
+          if (target) {
+            if (target.style.display === 'none') {
+              target.style.display = 'block';
+              this.textContent = 'Show Less';
+            } else {
+              target.style.display = 'none';
+              this.textContent = 'Read More';
+            }
+          }
+        });
+      });
     }
 
     // serviceFilter.addEventListener("input", (e) => {
