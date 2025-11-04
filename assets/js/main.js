@@ -402,7 +402,7 @@
       },
       {
         title: "MCBs & Protection Devices",
-        image: "assets/img/products/mcb.png",
+        image: "assets/img/products/mcb.jpg",
         description: "Complete range of miniature circuit breakers, RCCBs, MCCBs, and surge protection devices from leading brands.",
         features: [
           "Single & Three Phase MCBs",
