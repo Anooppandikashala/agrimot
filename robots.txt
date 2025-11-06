@@ -1,0 +1,8 @@
+# Telling all robots (Google, Bing, etc.) what they can crawl
+User-agent: *
+
+# Allow crawling of all pages (default behavior)
+Allow: /
+
+# Specify the location of your sitemap
+Sitemap: https://anooppandikashala.github.io/agrimot/sitemap.xml
