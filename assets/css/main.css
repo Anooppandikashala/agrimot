@@ -2628,6 +2628,66 @@ section,
   margin: 0 auto;
 }
 
+/* Get quote button */
+
+/* .portfolio .cta-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.portfolio .cta-group .btn-primary {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: 1px solid color-mix(in srgb, var(--accent-color), black 20%);
+}
+
+.portfolio .cta-group .btn-primary:hover {
+  background: color-mix(in srgb, var(--accent-color), black 10%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 80%);
+  border: 2px solid var(--background-color);
+} */
+
+/* CTA group layout */
+.portfolio .cta-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;     /* spacing between button and arrow */
+  margin-top: 1.5rem;
+}
+
+.portfolio .cta-group a
+{
+  font-size: 1.5rem;
+}
+
+/* Down arrow styling */
+
+
+.portfolio .cta-group .down-arrow i {
+  font-size: 2.2rem;
+  color: var(--accent-color);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Change to filled icon */
+.portfolio .cta-group .down-arrow:hover i {
+  transform: translateY(4px);
+  color: color-mix(in srgb, var(--accent-color), black 20%);
+}
+
+.portfolio .cta-group .down-arrow:hover i::before {
+  content: "\F118"; /* Unicode for bi-arrow-down-circle-fill */
+}
+
 /*--------------------------------------------------------------
 # Team Section
 --------------------------------------------------------------*/

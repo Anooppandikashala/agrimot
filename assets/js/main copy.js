@@ -105,6 +105,13 @@
   // window.addEventListener('load', aosInit);
 
   /**
+   * Initiate glightbox
+   */
+  const glightbox = GLightbox({
+    selector: '.glightbox'
+  });
+
+  /**
    * Initiate Pure Counter
    */
   new PureCounter();
@@ -238,39 +245,43 @@
   
   const products = [
     // ACB (filter-branding)
-    { image: "assets/img/portfolio/web-acb-new-bg.webp", title: "ACB", filter: "filter-branding" },
+    { image: "assets/img/portfolio/product24.png", title: "ENERSYS", filter: "filter-branding" },
+    // { image: "assets/img/portfolio/product17.png", title: "S-Line BUSBAR", filter: "filter-branding" },
+    // { image: "assets/img/portfolio/product18.png", title: "LTXL CAPACITOR", filter: "filter-branding" },
 
     // MCB / MCCB (filter-mccb)
-    { image: "assets/img/portfolio/web-mccb-new-bg.webp", title: "MCCB", filter: "filter-mccb" },
-   
+    { image: "assets/img/portfolio/product1.png", title: "MCB With K Curve", filter: "filter-mccb" },
+    // { image: "assets/img/portfolio/product6.png", title: "MCCB - DY125U", filter: "filter-mccb" },
+    // { image: "assets/img/portfolio/product22.png", title: "RCCB & RCBO", filter: "filter-mccb" },
+
     // FN Switch (filter-switches)
-    { image: "assets/img/portfolio/web-FN-new-bg.webp", title: "FN Switch Disconnector", filter: "filter-switches" },
+    { image: "assets/img/portfolio/product25.png", title: "Breaker Control Switches", filter: "filter-switches" },
 
     // Changeover / Starters / Controllers (filter-changeover)
-    { image: "assets/img/portfolio/web-changeover-new-bg.webp", title: "Onload Changeover Switch", filter: "filter-changeover" },
-    
+    { image: "assets/img/portfolio/product2.png", title: "MK.i.DOL STARTER", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product7.png", title: "MD STARTER+", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product8.png", title: "MU-GS SMART CONTROLLER", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product10.png", title: "Single Phase ACCL", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product13.png", title: "iMMR Motor Relay", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product14.png", title: "SMART CONTROLLER", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product15.png", title: "Single Phase Controller", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product21.png", title: "Three Phase ACCL", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product11.png", title: "Water Controller WLC SzLC", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product9.png", title: "Px300 Solar Drive Controller", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product4.png", title: "M-POWER++", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product5.png", title: "M-POWER Pro", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product27.png", title: "Voltage Monitoring Relay", filter: "filter-changeover" },
+    // { image: "assets/img/portfolio/product26.png", title: "Earth Leakage Relay", filter: "filter-changeover" },
+
     // Power Contactors (filter-contactors)
-    { image: "assets/img/portfolio/web-contactor-new-bg.webp", title: "Power Contactor", filter: "filter-contactors" },
+    { image: "assets/img/portfolio/product3.png", title: "MK1 & MK2 Contactors", filter: "filter-contactors" },
+    // { image: "assets/img/portfolio/product12.png", title: "Motor Protection Relays", filter: "filter-contactors" },
+    // { image: "assets/img/portfolio/product20.png", title: "numrAL Relays", filter: "filter-contactors" },
 
-    // DB
-    { image: "assets/img/portfolio/web-db-new-bg.webp", title: "Distribution Board", filter: "filter-db" },
-
-    //Capacitor
-    { image: "assets/img/portfolio/web-capacitor-new-bg.webp", title: "Capacitor", filter: "filter-capacitor" },
-
-    // Motor Starter
-    { image: "assets/img/portfolio/web-motor-starter-new-bg.webp", title: "Motor Starter", filter: "filter-motor-starter" },
-
-    // Industrial Signalling
-    { image: "assets/img/portfolio/web-indicator-new-bg.webp", title: "Industrial Signalling", filter: "filter-indicators" },
-
-
-    //Fuse and Fuse Carrier
-    { image: "assets/img/portfolio/web-fuse-NEW-BG.webp", title: "Fuse and Fuse Carrier", filter: "filter-fuse" },
-
-    //Junction Box and Meter Box
-    { image: "assets/img/portfolio/web-sintex-new-bg.webp", title: "Junction Box and Meter Box", filter: "filter-boxes" },
-  
+    // Indicators (filter-indicators)
+    { image: "assets/img/portfolio/product16.png", title: "Industrial Signalling Products", filter: "filter-indicators" },
+    // { image: "assets/img/portfolio/product28.png", title: "Metal Push Buttons", filter: "filter-indicators" },
+    // { image: "assets/img/portfolio/product19.png", title: "Monitors", filter: "filter-indicators" },
   ];
 
 
@@ -349,13 +360,6 @@
 
   });
 
-  /**
-   * Initiate glightbox
-   */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
-
   const clients = [
     { image: "assets/img/clients/cl1.jpg", alt: "Client 1" },
     { image: "assets/img/clients/cl2.png", alt: "Client 2" },
@@ -384,6 +388,107 @@
     `).join("");
   }
   renderClients();
+
+  const services = [
+      {
+        title: "Distribution Boxes",
+        image: "assets/img/products/db.png",
+        description: "High-quality distribution boxes for residential, commercial, and industrial applications. Available in various sizes and configurations.",
+        features: [
+          "Metal & Plastic Enclosures",
+          "IP Rated Protection",
+          "Custom Configurations"
+        ]
+      },
+      {
+        title: "MCBs & Protection Devices",
+        image: "assets/img/products/mcb.jpg",
+        description: "Complete range of miniature circuit breakers, RCCBs, MCCBs, and surge protection devices from leading brands.",
+        features: [
+          "Single & Three Phase MCBs",
+          "Earth Leakage Protection",
+          "Surge Arresters"
+        ]
+      },
+      {
+        title: "Electrical Panels",
+        image: "assets/img/products/panels.png",
+        description: "Custom-designed electrical panels and control systems for various power distribution requirements.",
+        features: [
+          "LT & HT Panels",
+          "Control Panels",
+          "MCC & PCC Panels"
+        ]
+      }
+    ];
+
+    const serviceList = document.getElementById("serviceList");
+    //const serviceFilter = document.getElementById("serviceFilter");
+
+    function renderServices(filter = "") {
+      // const filtered = services.filter(s =>
+      //   s.title.toLowerCase().includes(filter.toLowerCase())
+      // );
+
+      serviceList.innerHTML = services.map((s, index) => `
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
+          <div class="service-item">
+            <div class="service-image">
+              <img src="${s.image}" alt="${s.title}" class="img-fluid" loading="lazy"
+                style="width: 100%; height: 200px; object-fit: contain; border-radius: 8px 8px 0 0;">
+            </div>
+            <div class="service-content" style="padding: 20px;">
+              <h3>${s.title}</h3>
+              <p>${s.description}</p>
+              <ul id="service-features-${index}" class="feature-list list-unstyled mb-4" style="display: none;">
+                ${s.features.map(f => `<li><i class="bi bi-check-circle"></i> ${f}</li>`).join("")}
+              </ul>
+              <a href="#" class="read-more" data-target="#service-features-${index}">Read More</a>
+            </div>
+          </div>
+        </div>
+      `).join("");
+
+      document.querySelectorAll('.read-more').forEach(button => {
+        button.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.dataset.target);
+          if (target) {
+            if (target.style.display === 'none' || target.style.display === '') {
+              target.style.display = 'block';
+              this.textContent = 'Show Less';
+            } else {
+              target.style.display = 'none';
+              this.textContent = 'Read More';
+            }
+          }
+        });
+      });
+
+      // Reset inline display when resizing window
+      window.addEventListener('resize', () => {
+        const width = window.innerWidth;
+        const description = document.querySelector('#about-description');
+        const readMore = document.querySelector('#about-description-a');
+
+        if (width > 576) {
+          // Desktop view — ensure it's visible and JS style is cleared
+          description.style.display = '';
+          readMore.style.display = 'none';
+        } else {
+          // Mobile view — follow CSS behavior
+          readMore.style.display = 'block';
+          // Don't reset description visibility if user toggled it manually
+        }
+      });
+    }
+
+    // serviceFilter.addEventListener("input", (e) => {
+    //   renderServices(e.target.value);
+    // });
+
+  //renderServices();
+
 
   document.addEventListener('DOMContentLoaded', function() {
     // Remove preloader immediately after DOM is ready
