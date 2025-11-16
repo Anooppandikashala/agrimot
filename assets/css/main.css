@@ -2418,71 +2418,102 @@ section,
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
-.portfolio .portfolio-filters-wrapper {
-  text-align: center;
-  margin-bottom: 80px;
-}
 
-.portfolio .portfolio-filters {
-  display: inline-flex;
+/* Outer container with arrows */
+.filters-scroll-container {
+  position: relative;
+  width: 100%;
+  display: flex;
   align-items: center;
-  gap: 40px;
+  justify-content: center;
+}
+
+/* Hide scrollbar inside scroll area */
+.filters-scroll-area {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  /* padding: 0 40px 0 40px; Space so text doesn't hide under arrows */
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  width: calc(100% - 100px) !important; 
+}
+
+.filters-scroll-area::-webkit-scrollbar {
+  display: none;
+}
+
+/* Force UL items to stay horizontally */
+.portfolio-filters {
+  display: inline-flex;
+  gap: 10px !important;
   padding: 0;
-  margin: 0;
-  list-style: none;
-  position: relative;
 }
 
-.portfolio .portfolio-filters::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: color-mix(in srgb, var(--default-color), transparent 90%);
-}
-
-.portfolio .portfolio-filters li {
-  position: relative;
+.portfolio-filters li {
+  flex: 0 0 auto;
+  padding: 8px !important;
+  border-radius: 6px;
+  background: #f1f1f1;
   cursor: pointer;
-  padding: 12px 0;
-  font-size: 15px;
-  font-weight: 400;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  transition: all 0.4s ease-out;
-  letter-spacing: 0.5px;
+  white-space: nowrap;
+   list-style: none;
 }
 
-.portfolio .portfolio-filters li::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  width: 0;
-  height: 2px;
+.portfolio-filters li.filter-active {
   background: var(--accent-color);
-  transition: all 0.4s ease-out;
-  transform: translateX(-50%);
+  color: #fff !important;
 }
 
-.portfolio .portfolio-filters li:hover {
-  color: var(--default-color);
+/* Arrow buttons */
+.scroll-arrow {
+  position: absolute;
+  top: 15%;
+  transform: translateY(-25%);
+  /* Blur the background behind arrow */
+  backdrop-filter: blur(6px);
+  /* -webkit-backdrop-filter: blur(6px); */
+  background: rgba(255, 255, 255, 0.3); /* frosted glass effect */
+  color: var(--accent-color);
+  border: none;
+  padding: 6px 12px;
+  font-size: 22px;
+  border-radius: 20%;
+  cursor: pointer;
+  z-index: 20;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-.portfolio .portfolio-filters li.filter-active {
-  color: var(--default-color);
+.left-arrow {
+  left: 0;
 }
 
-.portfolio .portfolio-filters li.filter-active::after {
-  width: 100%;
+.right-arrow {
+  right: 0;
 }
 
+/* MOBILE ONLY */
 @media (max-width: 768px) {
-  .portfolio .portfolio-filters {
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+  /* Hide arrows completely */
+  .scroll-arrow {
+    display: none !important;
+  }
+
+  /* Expand scroll area to full width */
+  .filters-scroll-area {
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Make filters more compact if needed */
+  .portfolio-filters {
+    gap: 15px !important;
   }
 }
 
@@ -2630,31 +2661,6 @@ section,
 
 /* Get quote button */
 
-/* .portfolio .cta-group {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.portfolio .cta-group .btn-primary {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  padding: 1rem 2.5rem;
-  border-radius: 8px;
-  font-weight: 500;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  display: inline-block;
-  border: 1px solid color-mix(in srgb, var(--accent-color), black 20%);
-}
-
-.portfolio .cta-group .btn-primary:hover {
-  background: color-mix(in srgb, var(--accent-color), black 10%);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 80%);
-  border: 2px solid var(--background-color);
-} */
-
 /* CTA group layout */
 .portfolio .cta-group {
   display: flex;
@@ -2670,8 +2676,6 @@ section,
 }
 
 /* Down arrow styling */
-
-
 .portfolio .cta-group .down-arrow i {
   font-size: 2.2rem;
   color: var(--accent-color);
@@ -2682,10 +2686,11 @@ section,
 .portfolio .cta-group .down-arrow:hover i {
   transform: translateY(4px);
   color: color-mix(in srgb, var(--accent-color), black 20%);
+  content: "\F118"; /* Unicode for bi-arrow-down-circle-fill */
 }
 
 .portfolio .cta-group .down-arrow:hover i::before {
-  content: "\F118"; /* Unicode for bi-arrow-down-circle-fill */
+  content: "\F118"; 
 }
 
 /*--------------------------------------------------------------
@@ -3430,9 +3435,9 @@ section,
   opacity: 0.85;
 }
 
-.contact .contact-sidebar .contact-methods {
+/* .contact .contact-sidebar .contact-methods {
   margin-bottom: 60px;
-}
+} */
 
 .contact .contact-sidebar .contact-method {
   display: flex;

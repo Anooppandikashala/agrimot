@@ -278,7 +278,7 @@
 
   products.forEach((product, index) => {
     const itemHTML = `
-      <div class="col-lg-8 col-md-8 portfolio-item isotope-item ${product.filter}">
+      <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 portfolio-item isotope-item ${product.filter}">
         <div class="portfolio-card">
           <div class="image-container">
             <img src="${product.image}" class="img-fluid" alt="${product.title}" loading="lazy" >
@@ -333,6 +333,11 @@
       initIsotope.layout();
     });
 
+    // Add resize event listener
+    window.addEventListener('resize', function() {
+      initIsotope.layout();
+    });
+
     isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
       filters.addEventListener('click', function() 
       {
@@ -354,6 +359,20 @@
    */
   const glightbox = GLightbox({
     selector: '.glightbox'
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const inner = document.querySelector(".filters-scroll-area");
+    const btnLeft = document.querySelector(".left-arrow");
+    const btnRight = document.querySelector(".right-arrow");
+
+    btnLeft.addEventListener("click", () => {
+      inner.scrollBy({ left: -400, behavior: "smooth" });
+    });
+
+    btnRight.addEventListener("click", () => {
+      inner.scrollBy({ left: 400, behavior: "smooth" });
+    });
   });
 
   const clients = [
