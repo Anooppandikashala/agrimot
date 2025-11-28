@@ -376,12 +376,12 @@
   });
 
   const clients = [
-    { image: "assets/img/clients/cl1.jpg", alt: "Client 1" },
-    { image: "assets/img/clients/cl2.png", alt: "Client 2" },
-    { image: "assets/img/clients/cl3.png", alt: "Client 3" },
-    { image: "assets/img/clients/cl4.png", alt: "Client 4" },
-    { image: "assets/img/clients/cl5.png", alt: "Client 5" },
-    { image: "assets/img/clients/cl6.png", alt: "Client 6" },
+    { image: "assets/img/clients/cl1.webp", alt: "Client 1" },
+    { image: "assets/img/clients/cl2.webp", alt: "Client 2" },
+    { image: "assets/img/clients/cl3.webp", alt: "Client 3" },
+    { image: "assets/img/clients/cl4.webp", alt: "Client 4" },
+    { image: "assets/img/clients/cl5.webp", alt: "Client 5" },
+    { image: "assets/img/clients/cl6.webp", alt: "Client 6" },
     // { image: "assets/img/clients/cl1.jpg", alt: "Client 1" },
     // { image: "assets/img/clients/cl2.png", alt: "Client 2" },
     // { image: "assets/img/clients/cl3.png", alt: "Client 3" },
