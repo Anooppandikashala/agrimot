@@ -149,10 +149,11 @@ h6 {
 
 .header .topbar {
   background-color: var(--background-color);
-  height: 40px;
+  height: 0px;
   padding: 0;
   font-size: 14px;
   transition: all 0.5s;
+  visibility:hidden;
 }
 
 .header .topbar .contact-info i {
@@ -205,7 +206,7 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 50px;
+  max-height: 65px;
   margin-right: 8px;
 }
 
@@ -2686,11 +2687,11 @@ section,
 .portfolio .cta-group .down-arrow:hover i {
   transform: translateY(4px);
   color: color-mix(in srgb, var(--accent-color), black 20%);
-  content: "\F118"; /* Unicode for bi-arrow-down-circle-fill */
+  content: "\f5b1"; /* Unicode for bi-label-fill */
 }
 
 .portfolio .cta-group .down-arrow:hover i::before {
-  content: "\F118"; 
+  content: "\f5b1"; 
 }
 
 /*--------------------------------------------------------------
@@ -5227,6 +5228,13 @@ section,
 
 /* Responsiveness metrics */
 
+@media (max-width: 770px){
+  .header .logo img {
+    max-height: 50px;
+    margin-right: 8px;
+  }
+}
+
 @media (max-width: 500px){
   .header .logo img {
     max-height: 40px;
@@ -5251,4 +5259,21 @@ section,
     max-height: 20px;
     margin-right: 8px;
   }
+}
+
+.badge {
+  background: #0057ff;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-right: 4px;
+  display: inline-block;
+}
+
+.highlight {
+  background-color: #fff3b0;
+  padding: 2px 4px;
+  border-radius: 3px;
+  color: #000;
 }
