@@ -145,6 +145,8 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   background-color: var(--background-color);
+  height: 120px;
+  margin-top: 20px;
 }
 
 .header .topbar {
@@ -206,7 +208,8 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 65px;
+  max-height: 70px;
+  vertical-align: middle;
   margin-right: 8px;
 }
 
@@ -219,6 +222,7 @@ h6 {
 
 .scrolled .header {
   box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+  height: 80px;
 }
 
 .scrolled .header .topbar {
@@ -252,7 +256,7 @@ h6 {
   .navmenu a:focus {
     color: var(--nav-color);
     padding: 18px 15px;
-    font-size: 15px;
+    font-size: 18px;
     font-family: var(--nav-font);
     font-weight: 500;
     display: flex;
@@ -5272,8 +5276,9 @@ section,
 }
 
 .highlight {
-  background-color: #fff3b0;
+  background-color: #f7f7f7;
   padding: 2px 4px;
   border-radius: 3px;
-  color: #000;
+  font-weight: 400;
+  /* color: #000; */
 }
