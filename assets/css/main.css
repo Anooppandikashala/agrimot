@@ -145,8 +145,6 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   background-color: var(--background-color);
-  height: 120px;
-  margin-top: 20px;
 }
 
 .header .topbar {
@@ -5231,7 +5229,12 @@ section,
 }
 
 /* Responsiveness metrics */
-
+@media (min-width: 1200px){
+  .header {  
+    height: 120px;
+    margin-top: 20px;
+  }
+}
 @media (max-width: 770px){
   .header .logo img {
     max-height: 50px;
