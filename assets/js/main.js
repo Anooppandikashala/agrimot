@@ -244,7 +244,7 @@
     { image: "assets/img/portfolio/web-mccb-new-bg.webp", title: "MCCB", filter: "filter-mccb" },
    
     // FN Switch (filter-switches)
-    { image: "assets/img/portfolio/web-FN-new-bg.webp", title: "FN Switch Disconnector", filter: "filter-switches" },
+    { image: "assets/img/portfolio/web-switch-disconnector.webp", title: "Switch Disconnector", filter: "filter-switches" },
 
     // Changeover / Starters / Controllers (filter-changeover)
     { image: "assets/img/portfolio/web-changeover-new-bg.webp", title: "Onload Changeover Switch", filter: "filter-changeover" },
