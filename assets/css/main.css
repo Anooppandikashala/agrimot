@@ -220,7 +220,6 @@ h6 {
 
 .scrolled .header {
   box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
-  height: 80px;
 }
 
 .scrolled .header .topbar {
@@ -5234,7 +5233,11 @@ section,
     height: 120px;
     margin-top: 20px;
   }
+  .scrolled .header {
+    height: 80px;
+  }
 }
+
 @media (max-width: 770px){
   .header .logo img {
     max-height: 50px;
