@@ -14,8 +14,8 @@
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #172624; /* Color for headings, subheadings and title throughout the website */
+  --default-color: #000000; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #000000; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #0072BC;
   --accent-color2: #09947d; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
@@ -24,12 +24,12 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #222222;  /* The default color of the main navmenu links */
+  --nav-color: #000000;  /* The default color of the main navmenu links */
   --nav-hover-color: #0072BC;
   --nav-hover-color2: #09947d; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #222222; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-color: #000000; /* Used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-hover-color2: #09947d;
   --nav-dropdown-hover-color: #0072BC; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
@@ -46,7 +46,7 @@
   --background-color: #0072BC;
   --default-color: #ffffff;
   --heading-color: #ffffff;
-  --surface-color: #252525;
+  --surface-color: #000000;
   --contrast-color: #ffffff;
 }
 
@@ -1093,8 +1093,8 @@ section,
   top: 0;
   right: 0;
   width: 100%;
-  height: 100%;
-  background: url("../img/hero/1.webp") 90% 10% / cover no-repeat;
+  height: 100vh;
+  background: url("../img/hero/2.png") 80% 10% / cover no-repeat;
   box-shadow: 
     inset 0 0 200px 100px #1B1B1B,
     inset 0 0 500px rgba(0, 0, 0, 0.7);
@@ -1266,7 +1266,7 @@ section,
 .about .content .lead {
   font-size: 1.25rem;
   line-height: 1.7;
-  color: color-mix(in srgb, var(--default-color), transparent 10%);
+  color: color-mix(in srgb, var(--default-color), transparent 0%);
 }
 
 .about .content .description {
