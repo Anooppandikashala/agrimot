@@ -885,11 +885,12 @@ section,
 }
 
 .hero .hero-content .content p {
-  font-size: 1.125rem;
+  font-size: 1.3rem;
   line-height: 1.7;
   color: color-mix(in srgb, var(--contrast-color), transparent 0%);
   margin-bottom: 3rem;
-  max-width: 90%;
+  max-width: 100%;
+  font-weight: 500 !important;
   letter-spacing: 0.1rem;
 }
 
@@ -1092,7 +1093,7 @@ section,
   left: 0;        /* use left instead of right */
   width: 100%;
   height: 100%;
-  background: url("../img/hero/3.webp") center center / cover no-repeat;
+  background: url("../img/hero/3.png") center center / cover no-repeat;
   box-shadow: 
     inset 0 0 200px 100px #1B1B1B,
     inset 0 0 500px rgba(0, 0, 0, 0.7);
@@ -1106,6 +1107,19 @@ section,
     0 0 20px rgba(255, 255, 255, 0.5); */
 
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.hero-sub-image
+{
+  margin-right: 50px;
+}
+
+.hero-sub-image img
+{
+  width: 100%;
+  height: fit-content;
+  object-fit: contain;
+  scale: 1.15;
 }
 
 /*--------------------------------------------------------------
@@ -1264,6 +1278,7 @@ section,
 .about .content .lead {
   font-size: 1.3rem;
   line-height: 1.7;
+  font-weight: 400 !important;
   color: color-mix(in srgb, var(--default-color), transparent 0%);
 }
 
@@ -1298,7 +1313,7 @@ section,
 {
   font-size: 1.3rem !important;
   line-height: 1.7 !important;
-  font-weight: 300;
+  font-weight: 400 !important;
   color: color-mix(in srgb, var(--default-color), transparent 0%);
 }
 
@@ -5281,6 +5296,11 @@ section,
   {
     display: none;
   }
+
+  .hero-sub-image img
+  {
+    display: none;
+  }
 }
 
 @media (max-width: 350px){
@@ -5304,7 +5324,7 @@ section,
   background-color: #f7f7f7;
   padding: 2px 4px;
   border-radius: 3px;
-  font-weight: 400;
+  font-weight: 500;
   /* color: #000; */
 }
 
