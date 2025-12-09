@@ -261,6 +261,9 @@
     // Motor Starter
     { image: "assets/img/portfolio/web-motor-starter-new-bg.webp", title: "Motor Starter", filter: "filter-motor-starter" },
 
+    // MCB RCCB Isolator
+    { image: "assets/img/portfolio/web-mcb,-rccb,-isolator-new-bg.webp", title: "MCB,RCCB,Isolator", filter: "filter-mcb-rccb" },
+
     // Industrial Signalling
     { image: "assets/img/portfolio/web-indicator-new-bg.webp", title: "Industrial Signalling", filter: "filter-indicators" },
 
