@@ -5079,12 +5079,6 @@ section,
   }
 }
 
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
 
 /* Whatsapp */
 
@@ -5358,17 +5352,17 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 4px 20px rgba(37, 98, 211, 0.4);
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 1000;
   text-decoration: none;
-  animation: pulse 2s infinite;
+  animation: pulse-call 2s infinite;
 }
 
 .call-action-float:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+  box-shadow: 0 6px 30px rgba(37, 98, 211, 0.4);
   background: #255cd3;
 }
 
@@ -5417,7 +5411,7 @@ section,
 }
 
 .call-action-float.clicked {
-  animation: ripple 0.6s ease-out;
+  animation: ripple-call 0.6s ease-out;
 }
 
 
@@ -5493,4 +5487,26 @@ section,
 .phone-label {
   display: inline-block;
   width: 55px;   /* adjust as needed */
+}
+
+/* Pulse animation */
+@keyframes pulse-call {
+  0% {
+    box-shadow: 0 4px 20px rgba(37, 98, 211, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 30px rgba(37, 112, 211, 0.7);
+  }
+  100% {
+    box-shadow: 0 4px 20px rgba(37, 118, 211, 0.4);
+  }
+}
+
+@keyframes ripple-call {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 112, 211, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(37, 170, 211, 0);
+  }
 }
