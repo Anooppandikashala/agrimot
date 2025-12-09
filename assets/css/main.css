@@ -5297,9 +5297,12 @@ section,
     display: none;
   }
 
-  .hero-sub-image img
+  .hero-sub-image
   {
-    display: none;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 20px;
+    margin-bottom: 20px !important;
   }
 }
 
