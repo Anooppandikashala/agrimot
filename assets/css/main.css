@@ -553,7 +553,7 @@ h6 {
 }
 
 .footer h4 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   position: relative;
   padding-bottom: 12px;
@@ -561,6 +561,11 @@ h6 {
 
 .footer .footer-links {
   margin-bottom: 30px;
+}
+
+.footer .footer-follow
+{
+  font-size: 16px;
 }
 
 .footer .footer-links ul {
@@ -571,7 +576,7 @@ h6 {
 
 .footer .footer-links ul i {
   margin-right: 3px;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 0;
   color: var(--accent-color);
 }
@@ -605,6 +610,7 @@ h6 {
 
 .footer .footer-contact p {
   margin-bottom: 5px;
+  font-size: 16px;
 }
 
 .footer .copyright {
@@ -849,6 +855,7 @@ section,
 
 .section-title p {
   margin-bottom: 0;
+  font-size: 18px;
 }
 
 /*--------------------------------------------------------------
@@ -1942,7 +1949,7 @@ section,
 }
 
 .clients p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.7;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   margin-bottom: 10px;
@@ -2643,7 +2650,7 @@ section,
 
 .portfolio .content h3 {
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 8px;
   transition: color 0.3s ease;
   letter-spacing: 0.5px;
@@ -3457,15 +3464,16 @@ section,
 
 .contact .contact-sidebar .contact-header h3 {
   font-size: 28px;
-  font-weight: 300;
+  font-weight: 500;
   margin-bottom: 20px;
   color: var(--heading-color);
   letter-spacing: -0.3px;
 }
 
 .contact .contact-sidebar .contact-header p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.7;
+  font-weight: 500;
   color: var(--default-color);
   margin-bottom: 0;
   opacity: 0.85;
@@ -3497,7 +3505,7 @@ section,
 }
 
 .contact .contact-sidebar .contact-method .contact-icon i {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .contact .contact-sidebar .contact-method .contact-details {
@@ -3505,7 +3513,7 @@ section,
 }
 
 .contact .contact-sidebar .contact-method .contact-details .method-label {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--accent-color);
   letter-spacing: 1px;
@@ -3515,7 +3523,7 @@ section,
 }
 
 .contact .contact-sidebar .contact-method .contact-details p {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
   color: var(--default-color);
   margin-bottom: 0;
