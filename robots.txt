@@ -5,4 +5,4 @@ User-agent: *
 Allow: /
 
 # Specify the location of your sitemap
-Sitemap: https://anooppandikashala.github.io/agrimot/sitemap.xml
+Sitemap: https://agrimot.com/sitemap.xml
